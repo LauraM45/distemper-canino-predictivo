@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "model_name": "CDV-Predictive-Detector",
+    "model_version": "1.0.0",
+    "target_disease": "Canine Distemper Virus (CDV)",
+    "target_column": "diagnostico_cdv_confirmado",
+    "group_column": "ubicacion_procedencia",
+    "min_required_recall": 0.8,
+    "feature_count": 11,
+    "clinical_features": [
+      "edad_meses",
+      "sexo",
+      "raza",
+      "talla",
+      "ubicacion_procedencia",
+      "estado_vacunal",
+      "fiebre_hipertermia",
+      "signos_respiratorios_oculonasales",
+      "signos_digestivos",
+      "signos_neurologicos",
+      "signos_dermatologicos"
+    ],
+    "reference_record": {
+      "edad_meses": 4.0,
+      "sexo": "Macho",
+      "raza": "Border Collie",
+      "talla": "Mediano",
+      "ubicacion_procedencia": "Bogota D.C. (UNAL)",
+      "estado_vacunal": "Incompleto",
+      "fiebre_hipertermia": 1,
+      "signos_respiratorios_oculonasales": 0,
+      "signos_digestivos": 0,
+      "signos_neurologicos": 1,
+      "signos_dermatologicos": 1,
+      "diagnostico_cdv_confirmado": 1
+    }
+  },
+  "data_quality": {
+    "row_count": 120,
+    "missing_by_column": {
+      "edad_meses": 0,
+      "sexo": 0,
+      "raza": 0,
+      "talla": 0,
+      "ubicacion_procedencia": 0,
+      "estado_vacunal": 0,
+      "fiebre_hipertermia": 0,
+      "signos_respiratorios_oculonasales": 0,
+      "signos_digestivos": 0,
+      "signos_neurologicos": 0,
+      "signos_dermatologicos": 0,
+      "diagnostico_cdv_confirmado": 0
+    },
+    "coercions_to_missing": {
+      "edad_meses": 0,
+      "fiebre_hipertermia": 0,
+      "signos_respiratorios_oculonasales": 0,
+      "signos_digestivos": 0,
+      "signos_neurologicos": 0,
+      "signos_dermatologicos": 0,
+      "diagnostico_cdv_confirmado": 0
+    },
+    "unique_locations": 13,
+    "is_valid": true
+  },
+  "evaluation_protocol": "Validación Cruzada Estratificada (StratifiedKFold con 5 pliegues) con optimización orientada a Recall (Sensibilidad) y protección anti-coldstart.",
+  "models_summary": {
+    "DecisionTree": {
+      "best_cv_recall": 0.9161647361647363,
+      "best_params": {
+        "classifier__class_weight": null,
+        "classifier__criterion": "entropy",
+        "classifier__max_depth": 5,
+        "classifier__min_samples_leaf": 1,
+        "classifier__min_samples_split": 4
+      },
+      "evaluation": {
+        "aggregate_metrics": {
+          "accuracy": 0.85,
+          "balanced_accuracy": 0.814787966654585,
+          "precision": 0.9080459770114943,
+          "recall": 0.8876404494382022,
+          "specificity": 0.7419354838709677,
+          "f1": 0.8977272727272727,
+          "roc_auc": 0.8533889090250091
+        },
+        "fold_metrics": [
+          {
+            "fold": 1,
+            "test_rows": 24,
+            "accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.7777777777777777,
+            "precision": 0.8888888888888888,
+            "recall": 0.8888888888888888,
+            "f1": 0.8888888888888888,
+            "inner_best_score": 0.9225396825396827
+          },
+          {
+            "fold": 2,
+            "test_rows": 24,
+            "accuracy": 0.9166666666666666,
+            "balanced_accuracy": 0.8888888888888888,
+            "precision": 0.9444444444444444,
+            "recall": 0.9444444444444444,
+            "f1": 0.9444444444444444,
+            "inner_best_score": 0.928633706650948
+          },
+          {
+            "fold": 3,
+            "test_rows": 24,
+            "accuracy": 0.7916666666666666,
+            "balanced_accuracy": 0.8055555555555556,
+            "precision": 0.9333333333333333,
+            "recall": 0.7777777777777778,
+            "f1": 0.8484848484848485,
+            "inner_best_score": 0.8897222222222222
+          },
+          {
+            "fold": 4,
+            "test_rows": 24,
+            "accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.8333333333333334,
+            "precision": 0.9375,
+            "recall": 0.8333333333333334,
+            "f1": 0.8823529411764706,
+            "inner_best_score": 0.917175697865353
+          },
+          {
+            "fold": 5,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.7857142857142857,
+            "precision": 0.85,
+            "recall": 1.0,
+            "f1": 0.918918918918919,
+            "inner_best_score": 0.9438095238095239
+          }
+        ],
+        "classification_report": {
+          "Sano": {
+            "precision": 0.696969696969697,
+            "recall": 0.7419354838709677,
+            "f1-score": 0.71875,
+            "support": 31.0
+          },
+          "CDV": {
+            "precision": 0.9080459770114943,
+            "recall": 0.8876404494382022,
+            "f1-score": 0.8977272727272727,
+            "support": 89.0
+          },
+          "accuracy": 0.85,
+          "macro avg": {
+            "precision": 0.8025078369905956,
+            "recall": 0.814787966654585,
+            "f1-score": 0.8082386363636364,
+            "support": 120.0
+          },
+          "weighted avg": {
+            "precision": 0.8535179380006966,
+            "recall": 0.85,
+            "f1-score": 0.8514914772727272,
+            "support": 120.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            23,
+            8
+          ],
+          [
+            10,
+            79
+          ]
+        ]
+      },
+      "meets_recall_threshold": true
+    },
+    "RandomForest": {
+      "best_cv_recall": 0.9396396396396396,
+      "best_params": {
+        "classifier__class_weight": "balanced",
+        "classifier__max_depth": null,
+        "classifier__min_samples_leaf": 2,
+        "classifier__min_samples_split": 2,
+        "classifier__n_estimators": 100
+      },
+      "evaluation": {
+        "aggregate_metrics": {
+          "accuracy": 0.8833333333333333,
+          "balanced_accuracy": 0.8267488220369699,
+          "precision": 0.9032258064516129,
+          "recall": 0.9438202247191011,
+          "specificity": 0.7096774193548387,
+          "f1": 0.9230769230769231,
+          "roc_auc": 0.9325842696629213
+        },
+        "fold_metrics": [
+          {
+            "fold": 1,
+            "test_rows": 24,
+            "accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.7777777777777777,
+            "precision": 0.8888888888888888,
+            "recall": 0.8888888888888888,
+            "f1": 0.8888888888888888,
+            "inner_best_score": 0.9323661210869221
+          },
+          {
+            "fold": 2,
+            "test_rows": 24,
+            "accuracy": 0.9583333333333334,
+            "balanced_accuracy": 0.9166666666666667,
+            "precision": 0.9473684210526315,
+            "recall": 1.0,
+            "f1": 0.972972972972973,
+            "inner_best_score": 0.9216221727845756
+          },
+          {
+            "fold": 3,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.8611111111111112,
+            "precision": 0.9411764705882353,
+            "recall": 0.8888888888888888,
+            "f1": 0.9142857142857143,
+            "inner_best_score": 0.940089811724962
+          },
+          {
+            "fold": 4,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.8055555555555556,
+            "precision": 0.8947368421052632,
+            "recall": 0.9444444444444444,
+            "f1": 0.918918918918919,
+            "inner_best_score": 0.9244875258223424
+          },
+          {
+            "fold": 5,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.7857142857142857,
+            "precision": 0.85,
+            "recall": 1.0,
+            "f1": 0.918918918918919,
+            "inner_best_score": 0.9612068965517242
+          }
+        ],
+        "classification_report": {
+          "Sano": {
+            "precision": 0.8148148148148148,
+            "recall": 0.7096774193548387,
+            "f1-score": 0.7586206896551724,
+            "support": 31.0
+          },
+          "CDV": {
+            "precision": 0.9032258064516129,
+            "recall": 0.9438202247191011,
+            "f1-score": 0.9230769230769231,
+            "support": 89.0
+          },
+          "accuracy": 0.8833333333333333,
+          "macro avg": {
+            "precision": 0.8590203106332138,
+            "recall": 0.8267488220369699,
+            "f1-score": 0.8408488063660478,
+            "support": 120.0
+          },
+          "weighted avg": {
+            "precision": 0.8803863002787734,
+            "recall": 0.8833333333333333,
+            "f1-score": 0.8805923961096376,
+            "support": 120.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            22,
+            9
+          ],
+          [
+            5,
+            84
+          ]
+        ]
+      },
+      "meets_recall_threshold": true
+    },
+    "LogisticRegression": {
+      "best_cv_recall": 0.908108108108108,
+      "best_params": {
+        "classifier__C": 1.0,
+        "classifier__class_weight": null,
+        "classifier__max_iter": 1000,
+        "classifier__penalty": "l2",
+        "classifier__solver": "lbfgs"
+      },
+      "evaluation": {
+        "aggregate_metrics": {
+          "accuracy": 0.85,
+          "balanced_accuracy": 0.7622326930047119,
+          "precision": 0.865979381443299,
+          "recall": 0.9438202247191011,
+          "specificity": 0.5806451612903226,
+          "f1": 0.9032258064516129,
+          "roc_auc": 0.9191736136281261
+        },
+        "fold_metrics": [
+          {
+            "fold": 1,
+            "test_rows": 24,
+            "accuracy": 0.7083333333333334,
+            "balanced_accuracy": 0.5833333333333334,
+            "precision": 0.7894736842105263,
+            "recall": 0.8333333333333334,
+            "specificity": 0.3333333333333333,
+            "f1": 0.8108108108108109,
+            "inner_best_score": 0.9319540229885057
+          },
+          {
+            "fold": 2,
+            "test_rows": 24,
+            "accuracy": 0.9583333333333334,
+            "balanced_accuracy": 0.9166666666666667,
+            "precision": 0.9473684210526315,
+            "recall": 1.0,
+            "specificity": 0.8333333333333334,
+            "f1": 0.972972972972973,
+            "inner_best_score": 0.9158986415882968
+          },
+          {
+            "fold": 3,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.8055555555555556,
+            "precision": 0.8947368421052632,
+            "recall": 0.9444444444444444,
+            "specificity": 0.6666666666666666,
+            "f1": 0.918918918918919,
+            "inner_best_score": 0.9418520578420468
+          },
+          {
+            "fold": 4,
+            "test_rows": 24,
+            "accuracy": 0.8333333333333334,
+            "balanced_accuracy": 0.7222222222222222,
+            "precision": 0.85,
+            "recall": 0.9444444444444444,
+            "specificity": 0.5,
+            "f1": 0.8947368421052632,
+            "inner_best_score": 0.9147701149425288
+          },
+          {
+            "fold": 5,
+            "test_rows": 24,
+            "accuracy": 0.875,
+            "balanced_accuracy": 0.7857142857142857,
+            "precision": 0.85,
+            "recall": 1.0,
+            "specificity": 0.5714285714285714,
+            "f1": 0.918918918918919,
+            "inner_best_score": 0.9229152762328514
+          }
+        ],
+        "classification_report": {
+          "Sano": {
+            "precision": 0.782608695652174,
+            "recall": 0.5806451612903226,
+            "f1-score": 0.6666666666666666,
+            "support": 31.0
+          },
+          "CDV": {
+            "precision": 0.865979381443299,
+            "recall": 0.9438202247191011,
+            "f1-score": 0.9032258064516129,
+            "support": 89.0
+          },
+          "accuracy": 0.85,
+          "macro avg": {
+            "precision": 0.8242940385477364,
+            "recall": 0.7622326930047119,
+            "f1-score": 0.7849462365591398,
+            "support": 120.0
+          },
+          "weighted avg": {
+            "precision": 0.8444419542805917,
+            "recall": 0.85,
+            "f1-score": 0.8421146953405019,
+            "support": 120.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            18,
+            13
+          ],
+          [
+            5,
+            84
+          ]
+        ]
+      },
+      "meets_recall_threshold": true
+    }
+  },
+  "artifacts": {
+    "models": {
+      "DecisionTree": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\src\\data\\artifacts\\cdv_decisiontree_pipeline.pkl",
+      "RandomForest": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\src\\data\\artifacts\\cdv_randomforest_pipeline.pkl",
+      "LogisticRegression": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\src\\data\\artifacts\\cdv_logisticregression_pipeline.pkl"
+    },
+    "reports_and_plots": {
+      "cm_decisiontree": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\matriz_confusion_decisiontree.png",
+      "cm_randomforest": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\matriz_confusion_randomforest.png",
+      "cm_logisticregression": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\matriz_confusion_logisticregression.png",
+      "tree_diagram": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\arbol_decision_cdv.png",
+      "rf_feature_importance": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\importancia_variables_random_forest.png",
+      "lr_coefficients": "C:\\Users\\dania\\OneDrive\\Escritorio\\Modelo-Predictivo-Distemper-Canino-main\\demo_reports\\coeficientes_regresion_logistica.png"
+    }
+  }
+}
