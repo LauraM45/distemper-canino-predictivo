@@ -1,4 +1,4 @@
-﻿# Informe de Arquitectura Técnica e Ingeniería Inversa: Sistema Predictivo de Distemper Canino (CDV)
+# Informe de Arquitectura Técnica e Ingeniería Inversa: Sistema Predictivo de Distemper Canino (CDV)
 
 **Rol:** Arquitecto de Software Principal & Especialista en Ingeniería Inversa de Código  
 **Proyecto:** *Sistema de Detección Temprana y Diagnóstico Predictivo de Moquillo Canino (Canine Distemper Virus - CDV)*  
@@ -71,7 +71,7 @@ Modelo-Predictivo-Distemper-Canino-main/
 │
 ├── main.py                                  # Entry point: Orquestador CRISP-ML(Q) de entrenamiento
 ├── predict.py                               # Entry point: Motor de inferencia unitaria/batch
-├── evaluate_unseen_farm.py                  # Script de validación de generalización / Coldstart
+├── evaluate_unseen_patients.py              # Script de validación de generalización / Coldstart
 ├── generateDecisionTree.py                  # CLI específico para ajuste del árbol de decisión
 └── requirements.txt                         # Especificación de dependencias de producción
 `
@@ -80,7 +80,7 @@ Modelo-Predictivo-Distemper-Canino-main/
 
 | Capa | Componentes Clave | Responsabilidad Primaria |
 | :--- | :--- | :--- |
-| **Presentación / Transporte (CLI)** | main.py, predict.py, evaluate_unseen_farm.py, generateDecisionTree.py | Análisis de argumentos por línea de comandos (argparse), lectura/escritura de archivos (CSV/JSON/PNG) y formato de salida en consola. |
+| **Presentación / Transporte (CLI)** | main.py, predict.py, evaluate_unseen_patients.py, generateDecisionTree.py | Análisis de argumentos por línea de comandos (argparse), lectura/escritura de archivos (CSV/JSON/PNG) y formato de salida en consola. |
 | **Dominio y Reglas Clínicas** | ModelMetadata, CDVDataValidator | Definición contractual de las 11 variables, límites fisiológicos admisibles (ej. edad [0.5, 240] meses), categorías cerradas, normalización ortográfica y estratificación de riesgo clínico (>= 0.70 Alto, >= 0.40 Moderado, < 0.40 Bajo). |
 | **Transformación / Feature Engineering** | CDVFeaturePipelineBuilder | Ensamblado del ColumnTransformer scikit-learn con aislamiento estricto de pliegues (prevención de Data Leakage) y bifurcación anti-coldstart (min_frequency=2, handle_unknown="infrequent_if_exist"). |
 | **Modelado y Optimización** | DecisionTreeModelTrainer, RandomForestModelTrainer, LogisticRegressionModelTrainer | Búsqueda de hiperparámetros con GridSearchCV orientada a Recall, validación cruzada estratificada fuera de pliegue (Out-Of-Fold / OOF) y generación de gráficos explicativos. |
@@ -104,7 +104,7 @@ Modelo-Predictivo-Distemper-Canino-main/
    * Diagnóstico del registro de referencia por defecto.
    * Diagnóstico con categorías desconocidas (--coldstart-test).
    * Diagnóstico batch desde CSV (--input-csv y --output-csv).
-3. evaluate_unseen_farm.py: Test unitario de estrés ante pacientes y clínicas veterinarias no vistas.
+3. evaluate_unseen_patients.py: Test unitario de estrés ante pacientes y clínicas veterinarias no vistas.
 4. generateDecisionTree.py: Wrapper CLI focalizado en el reentrenamiento del modelo de árbol de decisión.
 
 ### Rastreo Paso a Paso: Flujo de Inferencia Clínica (predict.py)
@@ -196,7 +196,7 @@ graph TD
     subgraph Capa_CLI ["1. Capa de Presentación / CLI Entry Points"]
         MainCLI["main.py (Orquestador CRISP-ML(Q))"]
         PredictCLI["predict.py (Inferencia Clínica)"]
-        EvalUnseen["evaluate_unseen_farm.py (Prueba Coldstart)"]
+        EvalUnseen["evaluate_unseen_patients.py (Prueba Coldstart)"]
         GenTree["generateDecisionTree.py (Entrenamiento Árbol)"]
     end
 

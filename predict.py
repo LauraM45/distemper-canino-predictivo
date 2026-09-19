@@ -19,7 +19,7 @@ from sklearn.pipeline import Pipeline
 from src.data.dataValidation import CDVDataValidator, CDVValidationError, ModelMetadata
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DEFAULT_MODEL_PATH = PROJECT_ROOT / "src" / "data" / "artifacts" / "cdv_decisiontree_pipeline.pkl"
+DEFAULT_MODEL_PATH = PROJECT_ROOT / "src" / "data" / "artifacts" / "cdv_randomforest_pipeline.pkl"
 
 
 class CDVInferenceEngine:
