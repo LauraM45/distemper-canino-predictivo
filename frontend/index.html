@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Predictivo de Distemper Canino (CDV)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <!-- Chart.js para las gráficas interactivas del Dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Barra de Navegación Superior -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">🐕‍🦺</div>
+        <div class="brand-info">
+          <h1>CDV Predict</h1>
+          <p>Sistema de Soporte a la Decisión Clínica Veterinaria</p>
+        </div>
+      </div>
+      <div class="nav-badges">
+        <span class="badge badge-ml">ML Pipeline Scikit-Learn</span>
+        <span class="badge badge-db" id="db-status">● Neon DB Conectado</span>
+      </div>
+    </div>
+    <!-- Pestañas de navegación -->
+    <div class="tabs-container">
+      <button class="tab-btn active" id="tab-form-btn" onclick="cambiarPestana('formulario')">
+        🩺 Nuevo Diagnóstico
+      </button>
+      <button class="tab-btn" id="tab-dash-btn" onclick="cambiarPestana('dashboard')">
+        📊 Dashboard Estadístico
+      </button>
+      <button class="tab-btn" id="tab-hist-btn" onclick="cambiarPestana('historial')">
+        📋 Historial Clínico
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="main-content">
+    
+    <!-- ================= SECCIÓN 1: FORMULARIO CLÍNICO ================= -->
+    <section id="section-formulario" class="view-section active">
+      <div class="card form-card">
+        <div class="card-header">
+          <h2>Evaluación Clínica del Paciente Canino</h2>
+          <p>Ingrese las 11 variables para generar la predicción de riesgo de Moquillo Canino.</p>
+        </div>
+
+        <form id="cdv-form" onsubmit="enviarDiagnostico(event)">
+          <!-- Fila 1: Datos demográficos -->
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="edad_meses">Edad (en meses) *</label>
+              <input type="number" id="edad_meses" name="edad_meses" step="0.1" min="0.5" max="240" placeholder="Ej: 4.5" required />
+              <small class="hint">Admite entre 0.5 (2 semanas) y 240 meses (20 años).</small>
+            </div>
+
+            <div class="form-group">
+              <label for="sexo">Sexo *</label>
+              <select id="sexo" name="sexo" required>
+                <option value="" disabled selected>Seleccione el sexo</option>
+                <option value="Macho">Macho</option>
+                <option value="Hembra">Hembra</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="raza">Raza *</label>
+              <input type="text" id="raza" name="raza" list="razas-list" placeholder="Ej: Criollo, Labrador, Poodle..." required />
+              <datalist id="razas-list">
+                <option value="Criollo"></option>
+                <option value="Border Collie"></option>
+                <option value="Labrador Retriever"></option>
+                <option value="Pastor Alemán"></option>
+                <option value="Pug"></option>
+                <option value="Golden Retriever"></option>
+                <option value="Husky Siberiano"></option>
+                <option value="Pinscher"></option>
+                <option value="Beagle"></option>
+              </datalist>
+              <small class="hint">El modelo tolera razas no vistas (Coldstart).</small>
+            </div>
+
+            <div class="form-group">
+              <label for="talla">Talla / Porte *</label>
+              <select id="talla" name="talla" required>
+                <option value="" disabled selected>Seleccione la talla</option>
+                <option value="Pequeño">Pequeño</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Grande">Grande</option>
+                <option value="Gigante">Gigante</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="ubicacion_procedencia">Centro / Procedencia *</label>
+              <input type="text" id="ubicacion_procedencia" name="ubicacion_procedencia" placeholder="Ej: Clínica Norte, Albergue..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="estado_vacunal">Historial de Vacunación *</label>
+              <select id="estado_vacunal" name="estado_vacunal" required>
+                <option value="" disabled selected>Seleccione estado vacunal</option>
+                <option value="Completo">Completo</option>
+                <option value="Incompleto">Incompleto</option>
+                <option value="No vacunado">No vacunado</option>
+                <option value="Desconocido">Desconocido</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Sección: Signos Clínicos -->
+          <div class="signs-section">
+            <h3>Signos Clínicos Observados (Presencia / Ausencia)</h3>
+            <p class="signs-desc">Active los interruptores correspondientes a los signos presentes en el paciente:</p>
+
+            <div class="signs-grid">
+              <label class="sign-item">
+                <input type="checkbox" id="fiebre_hipertermia" name="fiebre_hipertermia" value="1" />
+                <span class="sign-slider"></span>
+                <span class="sign-label">
+                  <strong>🌡️ Fiebre / Hipertermia</strong>
+                  <small>Temperatura rectal > 39.2 °C</small>
+                </span>
+              </label>
+
+              <label class="sign-item">
+                <input type="checkbox" id="signos_respiratorios_oculonasales" name="signos_respiratorios_oculonasales" value="1" />
+                <span class="sign-slider"></span>
+                <span class="sign-label">
+                  <strong>👃 Secreción Oculonasal</strong>
+                  <small>Descarga mucopurulenta, tos o disnea</small>
+                </span>
+              </label>
+
+              <label class="sign-item">
+                <input type="checkbox" id="signos_digestivos" name="signos_digestivos" value="1" />
+                <span class="sign-slider"></span>
+                <span class="sign-label">
+                  <strong>🤢 Signos Digestivos</strong>
+                  <small>Vómito, diarrea profusa o anorexia</small>
+                </span>
+              </label>
+
+              <label class="sign-item">
+                <input type="checkbox" id="signos_neurologicos" name="signos_neurologicos" value="1" />
+                <span class="sign-slider"></span>
+                <span class="sign-label">
+                  <strong>⚡ Signos Neurológicos</strong>
+                  <small>Mioclonías (tics), ataxia, convulsiones</small>
+                </span>
+              </label>
+
+              <label class="sign-item">
+                <input type="checkbox" id="signos_dermatologicos" name="signos_dermatologicos" value="1" />
+                <span class="sign-slider"></span>
+                <span class="sign-label">
+                  <strong>🐾 Signos Dermatológicos</strong>
+                  <small>Hiperqueratosis plantar o nasal (almohadillas duras)</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Notas opcionales -->
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label for="notas_veterinarias">Notas Clínicas Adicionales (Opcional)</label>
+            <textarea id="notas_veterinarias" name="notas_veterinarias" rows="2" placeholder="Observaciones complementarias del médico veterinario..."></textarea>
+          </div>
+
+          <!-- Botón de Envío -->
+          <div class="form-actions">
+            <button type="submit" id="btn-submit" class="btn-primary">
+              <span id="btn-text">🔬 Generar Diagnóstico Predictivo</span>
+              <div id="btn-spinner" class="spinner" style="display: none;"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- TARJETA MODAL / RESULTADO DE INFERENCIA -->
+      <div id="result-container" class="card result-card" style="display: none;">
+        <div class="result-header">
+          <span id="risk-badge" class="risk-badge">ALTO RIESGO</span>
+          <h3 id="result-title">Diagnóstico Predictivo Emitido</h3>
+        </div>
+
+        <div class="result-body">
+          <div class="gauge-wrapper">
+            <div class="gauge-metric">
+              <span class="metric-number" id="prob-percentage">0%</span>
+              <span class="metric-label">Probabilidad Estimada de Distemper (CDV)</span>
+            </div>
+            <!-- Barra de progreso de riesgo -->
+            <div class="progress-bar-bg">
+              <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="result-details">
+            <div class="detail-box">
+              <strong>🩺 Interpretación Diagnóstica:</strong>
+              <p id="diagnosis-text">Cargando...</p>
+            </div>
+            <div class="detail-box">
+              <strong>⚠️ Acción Clínica Sugerida:</strong>
+              <p id="clinical-action-text">Cargando...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-footer">
+          <button class="btn-secondary" onclick="cerrarResultado()">➕ Evaluar Otro Paciente</button>
+          <button class="btn-primary" onclick="cambiarPestana('dashboard')">📊 Ver en Dashboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 2: DASHBOARD INFORMATIVO ================= -->
+    <section id="section-dashboard" class="view-section">
+      <div class="dash-header">
+        <div>
+          <h2>Dashboard Epidemiológico y Estadístico</h2>
+          <p>Métricas agregadas a partir de las evaluaciones registradas en Neon DB.</p>
+        </div>
+        <button class="btn-secondary" onclick="cargarMetricasDashboard()">🔄 Actualizar Métricas</button>
+      </div>
+
+      <!-- Tarjetas KPI -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">Total Evaluados</span>
+          <span class="kpi-value" id="kpi-total">0</span>
+          <span class="kpi-sub">Caninos procesados</span>
+        </div>
+
+        <div class="kpi-card kpi-positive">
+          <span class="kpi-label">Casos Positivos CDV</span>
+          <span class="kpi-value" id="kpi-positivos">0</span>
+          <span class="kpi-sub" id="kpi-tasa">0% tasa de positividad</span>
+        </div>
+
+        <div class="kpi-card kpi-warning">
+          <span class="kpi-label">Casos en Alto Riesgo</span>
+          <span class="kpi-value" id="kpi-alto-riesgo">0</span>
+          <span class="kpi-sub">Requieren aislamiento urgente</span>
+        </div>
+
+        <div class="kpi-card kpi-healthy">
+          <span class="kpi-label">Casos Sanos / Bajo Riesgo</span>
+          <span class="kpi-value" id="kpi-sanos">0</span>
+          <span class="kpi-sub">Seguimiento preventivo</span>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="charts-grid">
+        <div class="card chart-card">
+          <h3>Distribución por Nivel de Riesgo</h3>
+          <p class="chart-desc">Proporción de estratificación de riesgo emitida por el modelo.</p>
+          <div class="chart-wrapper">
+            <canvas id="chart-riesgo"></canvas>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <h3>Prevalencia de Signos Clínicos en Positivos (%)</h3>
+          <p class="chart-desc">Frecuencia relativa de signos en pacientes diagnosticados con CDV.</p>
+          <div class="chart-wrapper">
+            <canvas id="chart-signos"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 3: HISTORIAL CLÍNICO ================= -->
+    <section id="section-historial" class="view-section">
+      <div class="dash-header">
+        <div>
+          <h2>Historial de Pacientes Evaluados</h2>
+          <p>Registro de las últimas consultas e inferencias persistidas en la base de datos.</p>
+        </div>
+        <button class="btn-secondary" onclick="cargarHistorialPacientes()">🔄 Refrescar Tabla</button>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Raza</th>
+                <th>Edad (Meses)</th>
+                <th>Sexo</th>
+                <th>Talla</th>
+                <th>Diagnóstico</th>
+                <th>Probabilidad</th>
+                <th>Nivel de Riesgo</th>
+              </tr>
+            </thead>
+            <tbody id="pacientes-table-body">
+              <tr>
+                <td colspan="8" style="text-align: center; color: var(--text-muted);">
+                  Cargando historial de pacientes...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
