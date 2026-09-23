@@ -16,7 +16,7 @@ from src.data.dataValidation import CDVDataValidator
 from src.models.DecisionTreeTraining import DecisionTreeModelTrainer
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DATASET_PATH = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v5.csv"
+DATASET_PATH = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v7.csv"
 
 
 def main() -> None:

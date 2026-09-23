@@ -24,7 +24,7 @@ from src.database.connection import check_database_connection, get_db, get_engin
 from src.database.models import Base, PacienteCDV
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DATASET_CSV = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v5.csv"
+DATASET_CSV = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v7.csv"
 
 
 def check_connection() -> bool:

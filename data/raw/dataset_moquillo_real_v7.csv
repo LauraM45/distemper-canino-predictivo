@@ -1,0 +1,166 @@
+edad_meses,sexo,raza,talla,ubicacion_procedencia,estado_vacunal,fiebre_hipertermia,signos_respiratorios_oculonasales,signos_digestivos,signos_neurologicos,signos_dermatologicos,diagnostico_cdv_confirmado
+4.0,Macho,Border Collie,Mediano,Bogota - Zona Norte,Incompleto,1,0,0,1,1,1
+84.0,Hembra,Mestizo,Mediano,Bogota - Zona Centro,Desconocido,1,1,0,1,0,1
+5.0,Macho,Husky Siberiano,Grande,Chia (Sabana Norte),Incompleto,1,1,0,1,0,1
+2.5,Macho,Golden Retriever,Grande,Bogota - Zona Norte,No vacunado,0,0,0,1,0,1
+6.0,Hembra,Mestizo,Mediano,Chia (Sabana Norte),Desconocido,1,0,0,1,0,1
+6.0,Hembra,Mestizo,Mediano,Bogota - Engativa,Desconocido,1,0,0,1,0,1
+5.0,Macho,Mestizo,Mediano,Bogota - Bosa,Desconocido,1,0,0,1,0,1
+156.0,Macho,Mestizo,Mediano,Bogota - Zona Sur,Desconocido,0,0,0,1,0,1
+96.0,Hembra,Pinscher,Pequeño,Bogota - Zona Occidente,Desconocido,0,0,0,1,0,1
+3.0,Macho,Mestizo,Pequeño,Chia (Sabana Norte),No vacunado,1,0,0,1,0,1
+18.0,Macho,Labrador Retriever,Grande,Bogota - Zona Norte,Incompleto,0,0,0,1,0,1
+36.0,Hembra,Mestizo,Mediano,Bogota - Zona Suroriente,Desconocido,1,0,0,1,0,1
+4.0,Macho,Mestizo,Pequeño,Bogota - Bosa,No vacunado,1,0,0,1,1,1
+5.0,Hembra,Pastor Aleman,Grande,Chia (Sabana Norte),Desconocido,1,1,0,1,0,1
+3.5,Macho,Labrador Retriever,Grande,Bogota - Zona Norte,Incompleto,1,1,1,1,0,1
+9.0,Macho,Pastor Aleman,Grande,Bogota - Zona Sur,Incompleto,0,0,0,1,0,1
+6.0,Hembra,Mestizo,Mediano,Bogota - Zona Occidente,Desconocido,0,0,0,1,0,0
+2.0,Macho,Akita,Grande,Bogota - Zona Norte,No vacunado,1,0,1,0,0,0
+6.0,Hembra,Rottweiler,Grande,Chia (Sabana Norte),Incompleto,1,0,1,0,0,0
+144.0,Macho,Mestizo,Mediano,Bogota - Zona Sur,Completo,0,0,1,0,0,0
+132.0,Hembra,Shih-tzu,Pequeño,Bogota - Zona Norte,Completo,0,0,0,0,0,0
+6.0,Macho,Bulldog Ingles,Mediano,Bogota - Zona Centro,Incompleto,1,1,0,0,0,0
+72.0,Macho,Bulldog Ingles,Mediano,Bogota - Zona Occidente,Completo,0,1,0,0,0,0
+12.0,Hembra,Mestizo,Mediano,Chia (Sabana Norte),Completo,0,0,0,0,0,0
+24.0,Macho,Mestizo,Mediano,Bogota - Zona Norte,Completo,0,0,0,0,0,0
+36.0,Hembra,Mestizo,Mediano,Bogota - Zona Sur,Completo,0,0,0,0,0,0
+48.0,Macho,Mestizo,Mediano,Bogota - Engativa,Completo,0,0,0,0,0,0
+1.0,Macho,Mestizo,Pequeño,Bogota - Zona Norte,No vacunado,1,1,1,1,0,1
+2.0,Hembra,Mestizo,Pequeño,Bogota - Zona Centro,Incompleto,1,1,1,1,0,1
+5.0,Hembra,Mestizo,Mediano,Bogota - Zona Occidente,Incompleto,1,1,0,0,0,1
+3.0,Macho,Mestizo,Pequeño,Chiquinquira,Incompleto,1,1,0,0,0,1
+14.0,Macho,Mestizo,Mediano,Bogota - Zona Suroriente,Incompleto,1,1,0,0,0,1
+8.0,Hembra,Mestizo,Mediano,Bogota - Zona Suroriente,Incompleto,1,1,0,0,0,1
+6.0,Macho,Mestizo,Mediano,Bogota - Zona Suroriente,Incompleto,1,1,1,0,0,1
+5.0,Hembra,Mestizo,Mediano,Bogota - Zona Suroriente,Incompleto,0,0,0,0,0,1
+4.67,Macho,Mestizo,Pequeño,Bogota - Zona Suroriente,Incompleto,0,0,0,0,0,1
+4.67,Hembra,Mestizo,Pequeño,Bogota - Zona Suroriente,Incompleto,0,0,0,0,0,1
+4.0,Macho,Mestizo,Pequeño,Bogota - Zona Suroriente,Incompleto,0,0,0,0,0,1
+48.0,Hembra,Mestizo,Mediano,Bogota - Zona Occidente,Desconocido,1,1,0,0,0,1
+3.23,Macho,Mestizo,Pequeño,Chia (Sabana Norte),No vacunado,1,0,1,0,1,1
+2.7,Macho,French Poodle,Pequeño,Bogota - Usaquen,Incompleto,0,1,0,1,0,1
+6.7,Hembra,Mestizo,Mediano,Bogota - Kennedy,No vacunado,1,1,1,1,0,1
+7.6,Hembra,Mestizo,Mediano,Bogota - Engativa,Incompleto,0,0,0,1,1,1
+10.9,Hembra,Mestizo,Mediano,Bogota - Ciudad Bolivar,Incompleto,1,1,1,1,0,1
+79.3,Macho,Pastor Aleman,Grande,Bogota - Engativa,Incompleto,1,1,1,1,0,1
+50.7,Hembra,Mestizo,Grande,Bogota - Usaquen,No vacunado,1,1,0,0,0,1
+117.3,Hembra,Mestizo,Mediano,Bogota - Engativa,No vacunado,1,1,0,1,0,1
+39.8,Macho,Mestizo,Mediano,Bogota - Bosa,Completo,0,1,1,1,0,0
+39.2,Macho,Mestizo,Mediano,Bogota - Usaquen,No vacunado,1,1,0,0,0,1
+41.1,Hembra,Labrador Retriever,Grande,Bogota - Zona Norte,Desconocido,0,1,1,0,0,0
+2.3,Hembra,Mestizo,Mediano,Bogota - Kennedy,Incompleto,0,0,0,0,0,0
+1.4,Hembra,Mestizo,Mediano,Bogota - Zona Sur,No vacunado,1,1,0,1,1,1
+54.5,Hembra,Golden Retriever,Grande,Bogota - Bosa,Incompleto,1,1,0,1,1,1
+36.4,Hembra,Mestizo,Mediano,Bogota - Kennedy,No vacunado,1,1,1,0,0,1
+135.3,Hembra,Mestizo,Mediano,Bogota - Zona Norte,No vacunado,0,1,1,1,1,1
+8.9,Macho,Husky Siberiano,Grande,Bogota - Zona Norte,No vacunado,0,0,0,0,0,0
+12.2,Hembra,Mestizo,Mediano,Bogota - Zona Norte,No vacunado,1,1,1,0,1,1
+32.5,Macho,Pitbull,Grande,Bogota - Usaquen,Completo,1,1,1,0,0,1
+29.7,Macho,Mestizo,Mediano,Bogota - Zona Norte,Incompleto,0,1,0,0,0,0
+103.4,Hembra,Husky Siberiano,Grande,Bogota - Zona Sur,No vacunado,0,0,1,0,0,0
+32.5,Hembra,Mestizo,Mediano,Bogota - Usaquen,Desconocido,0,1,0,0,0,0
+67.6,Hembra,Pitbull,Grande,Bogota - Engativa,No vacunado,0,1,1,0,0,1
+2.0,Macho,Bull Terrier,Mediano,Bogota - Engativa,No vacunado,1,1,1,1,1,1
+39.7,Hembra,Labrador Retriever,Grande,Chia (Sabana Norte),No vacunado,1,1,1,1,0,1
+9.7,Macho,Pitbull,Grande,Bogota - Ciudad Bolivar,Incompleto,1,1,1,0,0,1
+7.0,Hembra,Mestizo,Pequeño,Bogota - Engativa,No vacunado,1,0,0,1,0,1
+2.3,Hembra,Mestizo,Mediano,Bogota - Usaquen,Completo,0,0,1,1,0,1
+34.9,Hembra,Mestizo,Mediano,Bogota - Bosa,Incompleto,0,0,0,0,0,0
+113.9,Hembra,Mestizo,Mediano,Chia (Sabana Norte),Incompleto,1,1,0,1,0,1
+2.0,Hembra,Mestizo,Mediano,Bogota - Zona Norte,No vacunado,1,0,1,0,0,1
+67.5,Macho,Pitbull,Grande,Chia (Sabana Norte),Desconocido,1,0,0,0,0,1
+103.5,Hembra,Bull Terrier,Pequeño,Bogota - Usaquen,Desconocido,1,0,1,0,0,1
+4.5,Hembra,Mestizo,Grande,Bogota - Zona Norte,Desconocido,0,0,0,0,0,0
+6.4,Macho,Bull Terrier,Mediano,Bogota - Ciudad Bolivar,Completo,1,0,1,1,1,1
+50.7,Hembra,Mestizo,Pequeño,Bogota - Engativa,No vacunado,1,1,0,1,0,1
+1.9,Macho,Pastor Aleman,Grande,Bogota - Kennedy,Completo,0,0,0,0,0,0
+8.1,Hembra,Mestizo,Pequeño,Chia (Sabana Norte),No vacunado,0,1,1,0,1,1
+110.5,Macho,Mestizo,Grande,Bogota - Zona Sur,No vacunado,1,0,1,1,0,1
+4.1,Hembra,Mestizo,Grande,Bogota - Bosa,Desconocido,0,0,1,0,0,0
+122.6,Hembra,Mestizo,Mediano,Bogota - Usaquen,Desconocido,0,1,1,0,0,1
+134.5,Macho,Pitbull,Grande,Bogota - Zona Norte,Incompleto,1,1,0,0,1,1
+59.8,Macho,Mestizo,Mediano,Bogota - Ciudad Bolivar,Completo,1,0,0,0,0,1
+5.9,Macho,Bull Terrier,Mediano,Bogota - Bosa,Completo,0,1,0,0,0,0
+42.7,Hembra,Pitbull,Grande,Chia (Sabana Norte),Completo,1,0,1,1,1,1
+1.2,Macho,Mestizo,Mediano,Bogota - Engativa,No vacunado,1,1,0,1,0,1
+83.4,Macho,Mestizo,Grande,Bogota - Engativa,Desconocido,1,1,0,1,0,1
+2.7,Hembra,Mestizo,Mediano,Bogota - Ciudad Bolivar,No vacunado,1,1,0,1,0,1
+2.9,Hembra,Mestizo,Mediano,Chia (Sabana Norte),No vacunado,1,1,1,1,0,1
+138.4,Macho,Bull Terrier,Mediano,Chia (Sabana Norte),No vacunado,0,0,1,1,0,1
+49.8,Hembra,Mestizo,Mediano,Bogota - Bosa,Incompleto,0,1,1,1,0,1
+4.5,Hembra,Mestizo,Mediano,Bogota - Bosa,Incompleto,1,0,0,0,0,1
+58.9,Hembra,Mestizo,Mediano,Bogota - Bosa,Incompleto,1,1,0,1,0,1
+2.8,Hembra,Mestizo,Mediano,Bogota - Ciudad Bolivar,No vacunado,1,0,1,1,0,1
+131.0,Hembra,Mestizo,Mediano,Chiquinquira,Desconocido,1,0,0,1,0,1
+20.7,Hembra,Mestizo,Mediano,Bogota - Engativa,Incompleto,0,0,1,0,0,0
+95.9,Hembra,Mestizo,Pequeño,Chia (Sabana Norte),No vacunado,1,0,0,1,0,1
+9.0,Macho,Pastor Aleman,Grande,Bogota - Usaquen,Desconocido,1,1,0,0,0,0
+9.9,Hembra,Bull Terrier,Mediano,Chia (Sabana Norte),No vacunado,1,0,1,0,0,1
+20.4,Hembra,Mestizo,Pequeño,Bogota - Usaquen,Completo,0,0,0,0,0,0
+31.2,Hembra,Mestizo,Pequeño,Bogota - Ciudad Bolivar,Completo,1,0,1,0,1,0
+51.5,Macho,Bull Terrier,Pequeño,Bogota - Bosa,No vacunado,1,0,1,1,0,1
+4.8,Macho,Mestizo,Mediano,Bogota - Engativa,Incompleto,0,0,0,0,0,0
+139.2,Macho,Mestizo,Mediano,Bogota - Ciudad Bolivar,No vacunado,0,0,1,1,0,1
+16.1,Macho,Pitbull,Grande,Bogota - Bosa,Desconocido,0,1,0,0,0,0
+49.1,Hembra,Mestizo,Mediano,Bogota - Ciudad Bolivar,No vacunado,1,0,1,1,0,1
+6.4,Hembra,Mestizo,Mediano,Bogota - Bosa,No vacunado,1,1,0,1,0,1
+11.9,Hembra,French Poodle,Pequeño,Chia (Sabana Norte),Incompleto,1,1,0,1,0,1
+14.4,Hembra,Mestizo,Pequeño,Bogota - Suba,Incompleto,0,0,0,0,0,0
+8.0,Macho,Poodle,Pequeño,Bogota - Suba,Incompleto,1,1,0,0,1,1
+9.7,Macho,Mestizo,Mediano,Bogota - Suba,No vacunado,1,1,1,0,0,1
+10.8,Macho,Mestizo,Mediano,Bogota - Kennedy,No vacunado,1,1,1,1,0,1
+7.4,Hembra,Labrador Retriever,Grande,Bogota - Zona Norte,No vacunado,1,1,0,1,0,1
+44.2,Hembra,Bull Terrier,Pequeño,Bogota - Zona Norte,Desconocido,1,1,1,1,0,1
+4.0,Macho,Labrador Retriever,Grande,Chia (Sabana Norte),Incompleto,0,1,0,1,0,1
+10.8,Hembra,Labrador Retriever,Grande,Bogota - Ciudad Bolivar,No vacunado,1,1,0,1,0,1
+9.0,Hembra,Mestizo,Mediano,Bogota - Usaquen,No vacunado,1,1,1,1,0,1
+125.0,Hembra,Mestizo,Mediano,Bogota - Suba,Incompleto,1,1,1,1,0,1
+60.4,Hembra,Bull Terrier,Mediano,Bogota - Usaquen,No vacunado,1,0,0,0,0,1
+11.4,Hembra,Mestizo,Mediano,Bogota - Ciudad Bolivar,Desconocido,1,0,0,0,0,1
+11.8,Hembra,Labrador Retriever,Grande,Bogota - Engativa,Incompleto,1,0,0,0,0,0
+6.0,Macho,Mestizo,Mediano,Chia (Sabana Norte),No vacunado,0,1,1,1,1,1
+8.0,Macho,Pastor Aleman,Grande,Bogota - Engativa,Incompleto,1,1,0,0,0,0
+2.0,Hembra,Poodle,Pequeño,Bogota - Engativa,Desconocido,1,1,1,1,0,1
+3.0,Hembra,Mestizo,Mediano,Bogota - Bosa,No vacunado,0,1,0,1,0,0
+10.0,Macho,Mestizo,Mediano,Chia (Sabana Norte),Incompleto,1,1,0,1,0,1
+24.0,Hembra,Mestizo,Mediano,Bogota - Usme,No vacunado,1,1,1,1,0,1
+4.0,Macho,Mestizo,Mediano,Bogota - Bosa,No vacunado,0,0,0,0,0,0
+48.0,Macho,Mestizo,Mediano,Bogota - Engativa,Incompleto,0,0,0,0,0,0
+12.0,Hembra,Mestizo,Mediano,Bogota - Suba,No vacunado,1,1,0,1,0,1
+3.0,Macho,Mestizo,Mediano,Bogota - Suba,Incompleto,0,1,0,0,0,0
+6.0,Hembra,Husky Siberiano,Grande,Bogota - Suba,No vacunado,1,1,1,1,1,1
+4.0,Hembra,Pitbull,Grande,Bogota - Bosa,No vacunado,0,0,1,0,0,1
+3.0,Macho,Pitbull,Grande,Bogota - Ciudad Bolivar,No vacunado,1,1,0,1,0,1
+18.0,Macho,Mestizo,Mediano,Bogota - Bosa,Completo,1,1,0,0,0,1
+84.0,Hembra,Pitbull,Grande,Bogota - Zona Sur,No vacunado,1,1,1,1,1,1
+3.0,Hembra,Mestizo,Mediano,Bogota - Bosa,Incompleto,1,0,1,1,0,1
+2.0,Macho,Pitbull,Grande,Chia (Sabana Norte),Incompleto,0,0,0,1,0,1
+8.0,Hembra,Mestizo,Mediano,Chia (Sabana Norte),No vacunado,0,1,1,1,0,1
+12.0,Macho,Pitbull,Grande,Bogota - Zona Sur,Desconocido,1,0,0,0,0,1
+4.0,Hembra,Mestizo,Mediano,Bogota - Bosa,No vacunado,0,1,0,1,1,1
+10.0,Macho,Bull Terrier,Grande,Bogota - Kennedy,Incompleto,1,1,1,1,1,1
+6.0,Hembra,Pitbull,Grande,Bogota - Zona Norte,No vacunado,1,1,0,1,0,1
+2.0,Hembra,Pitbull,Grande,Bogota - Suba,Incompleto,1,1,0,0,0,1
+3.0,Hembra,Mestizo,Mediano,Bogota - Bosa,Desconocido,1,1,0,1,0,1
+3.0,Hembra,Golden Retriever,Grande,Bogota - Zona Sur,Incompleto,1,1,1,1,1,1
+120.0,Hembra,Mestizo,Mediano,Bogota - Kennedy,No vacunado,1,0,1,0,0,1
+6.0,Hembra,Mestizo,Mediano,Bogota - Bosa,Completo,0,0,0,0,0,0
+8.0,Hembra,Mestizo,Mediano,Bogota - Usme,Incompleto,0,0,0,0,0,0
+12.0,Hembra,Mestizo,Mediano,Bogota - Kennedy,No vacunado,0,1,0,0,0,0
+6.0,Hembra,Labrador Retriever,Grande,Bogota - Bosa,Desconocido,1,1,0,1,1,1
+48.0,Hembra,Mestizo,Pequeño,Bogota - Suba,Completo,0,0,1,0,0,0
+67.0,Macho,Pitbull,Grande,Bogota - Suba,Completo,0,0,1,0,0,1
+6.0,Macho,Mestizo,Mediano,Bogota - Usaquen,Completo,1,1,1,0,0,1
+4.0,Macho,Mestizo,Pequeño,Bogota - Puente Aranda,Desconocido,1,1,1,0,1,1
+8.0,Hembra,Samoyedo,Mediano,Chia (Sabana Norte),Completo,1,0,1,0,0,1
+24.0,Macho,Schnauzer,Mediano,Bogota - Suba,Completo,0,1,1,0,1,1
+6.0,Hembra,Mestizo,Mediano,Bogota - Suba,Desconocido,0,1,1,0,1,1
+108.0,Hembra,Mestizo,Mediano,Bogota - Suba,Completo,0,1,1,0,1,1
+4.0,Macho,Pitbull,Pequeño,Bogota - Suba,Completo,1,0,1,0,0,1
+108.0,Macho,Poodle,Pequeño,Bogota - Suba,Completo,1,1,1,1,0,1
+62.0,Macho,Rottweiler,Pequeño,Chia (Sabana Norte),Completo,1,1,1,1,1,1
+6.0,Macho,Mestizo,Mediano,Bogota - Suba,Desconocido,1,1,1,0,0,1
+72.0,Macho,Criollo,Grande,Bogota - Sur,Incompleto,0,0,0,0,0,0
+72.0,Hembra,Criollo,Grande,Bogota - Sur,Completo,0,0,0,0,0,0
+180.0,Macho,Labrador,Grande,Bogota - Sur,Completo,1,1,0,0,0,0

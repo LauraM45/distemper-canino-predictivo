@@ -8,7 +8,7 @@ from pathlib import Path
 from main import run
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DEFAULT_DATASET = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v5.csv"
+DEFAULT_DATASET = PROJECT_ROOT / "data" / "raw" / "dataset_moquillo_real_v7.csv"
 DEFAULT_ARTIFACTS_DIR = PROJECT_ROOT / "src" / "data" / "artifacts"
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "demo_reports"
 

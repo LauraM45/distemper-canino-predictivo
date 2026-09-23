@@ -1,7 +1,7 @@
 # Análisis Exploratorio de Datos (EDA) — Distemper Canino (CDV)
 
-**Dataset:** `dataset_moquillo_real_v5.csv`  
-**Observaciones:** 120 registros clínicos caninos  
+**Dataset:** `dataset_moquillo_real_v7.csv`  
+**Observaciones:** 163 registros clínicos caninos  
 **Variables:** 12 columnas (11 predictoras y 1 objetivo)  
 **Propósito:** Caracterización clínica, epidemiológica y zootécnica para el diagnóstico predictivo de Moquillo Canino (*Canine Distemper Virus* - CDV).
 
